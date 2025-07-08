@@ -13,10 +13,8 @@
   <link rel="canonical" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-  <script src="../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="preload" media="(max-width: 750px)" href="gallery/banner.jpg" type="image/jpg" as="image" />
-  <link rel="preload" media="(min-width: 751px)" href="gallery/banner.jpg" type="image/jpg" as="image" />
-  <script src="../cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <style>
     @media only screen and (max-width: 600px) {
       .desktop-banner {
@@ -3522,154 +3520,6 @@
     }
   </style>
 
-  <script>
-
-
-    function contactusbutton() {
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var phone = document.getElementById('phone').value;
-      var city = document.getElementById('city').value;
-      var ip = document.getElementById('ip').value;
-      var project_name = document.getElementById('project_name').value;
-
-      if (name == '' || name == null) {
-        document.getElementById('name').focus();
-        return false;
-      }
-
-      if (phone == '' || phone == null) {
-        document.getElementById('phone').focus();
-        return false;
-      }
-
-      if (phone.length > 15 || phone.length < 10) {
-        document.getElementById('phone').focus();
-        alert('Plase enter your 10 digit mobile number');
-        return false;
-      }
-
-      if (email == '' || email == null) {
-        document.getElementById('email').focus();
-        return false;
-      }
-
-      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-      if (reg.test(email) == false) {
-        alert("Invalid Email Address");
-
-        return (false);
-      }
-
-
-      if (city == '' || city == null) {
-        document.getElementById('city').focus();
-        return false;
-      }
-
-      //   document.getElementById('contactusbutton').style.display = "none";
-      $('#SubmitQuery').prop("disabled", true);
-
-
-      $.ajax({
-        header: { 'Access-Control-Allow-Origin': '*' },
-        url: "https://investoxpert.remserp.com/WebCreate.aspx",
-           data: {'UID':'fourqt','PWD':'wn9mxO76f34=','name':name,'Email':email,'Mob':phone,'Channel':'MS','Src':utm_source,'City':'','Location':'', 'Project':project_name, 'Remark':ip,'url':'', 'fld1':utm_source, 'fld2': utm_campaignID, 'fld3':ip, 'fld4':utm_term, 'Adset_Name':utm_medium},
-
-        cache: 'false',
-        type: 'get',
-        success: function (res) {
-          var ip = document.getElementById('ip').value;
-          var message = "";
-           project_name = project_name+' (NEP)';
-          $.ajax({
-            header: { 'Access-Control-Allow-Origin': '*' },
-            url: "https://lms.theniralatrio.com/request.php",
-            data: {'name':name,'Email':email,'Mob':phone,'city' : city, 'Project':project_name, 'ip':ip,'message':message, 'gclid':gclid, 'utm_source': utm_source, 'utm_campaignID': utm_campaignID, 'utm_medium': utm_medium, 'utm_term':utm_term},
-            cache: 'false',
-            type: 'post',
-
-          })
-
-          setTimeout(function () { window.location.href = 'thankyou.html'; }, 100);
-
-        }
-      })
-    }
-
-
-  </script>
-  <script>
-
-    function contactusbutton1() {
-      var name1 = document.getElementById('name1').value;
-      var email1 = document.getElementById('email1').value;
-      var phone1 = document.getElementById('phone1').value;
-      var city = document.getElementById('city1').value;
-      var ip = document.getElementById('ip').value;
-      var project_name = document.getElementById('project_name1').value;
-
-
-      if (name1 == '' || name1 == null) {
-        document.getElementById('name1').focus();
-        return false;
-      }
-      if (phone1 == '' || phone1 == null) {
-        document.getElementById('phone').focus();
-        return false;
-      }
-
-      if (phone1.length > 15 || phone1.length < 10) {
-        document.getElementById('phone1').focus();
-        alert('Plase enter your 10 digit mobile number');
-        return false;
-      }
-
-      if (email1 == '' || email1 == null) {
-        document.getElementById('email1').focus();
-        return false;
-      }
-
-      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-      if (reg.test(email1) == false) {
-        alert("Invalid Email Address");
-
-        return (false);
-      }
-      //   document.getElementById('contactusbutton').style.display = "none";
-      $('#SubmitQuery1').prop("disabled", true);
-
-
-      $.ajax({
-        header: { 'Access-Control-Allow-Origin': '*' },
-        url: "https://investoxpert.remserp.com/WebCreate.aspx",
-         data: {'UID':'fourqt','PWD':'wn9mxO76f34=','name':name1,'Email':email1,'Mob':phone1,'Channel':'MS','Src':utm_source,'City':'','Location':'','Project':project_name,'Remark':ip,'url':'', 'fld1':utm_source, 'fld2': utm_campaignID, 'fld3':ip, 'fld4':utm_term, 'Adset_Name':utm_medium},
-
-        cache: 'false',
-        type: 'get',
-        success: function (res) {
-          var ip = document.getElementById('ip').value;
-          var message = "";
-            project_name = project_name+' (NEP)';
-          $.ajax({
-            header: { 'Access-Control-Allow-Origin': '*' },
-            url: "https://lms.theniralatrio.com/request.php",
-           data: {'name':name1,'Email':email1,'Mob':phone1,'city' : city,'Project':project_name,'ip':ip,'message':message, 'gclid':gclid, 'utm_source': utm_source, 'utm_campaignID': utm_campaignID, 'utm_medium': utm_medium, 'utm_term':utm_term},   
-            cache: 'false',
-            type: 'post',
-
-          })
-
-          setTimeout(function () { window.location.href = 'thankyou.html'; }, 100);
-
-        }
-      })
-    }
-
-
-  </script>
 </head>
 
 <body>
@@ -3691,11 +3541,11 @@
           <div class="justify-content-end collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav justify-content-lg-centerd">
               <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="#About-project" class="nav-link">About Clinic</a></li>
-              <li class="nav-item"><a href="#Site-Visit" onclick="showPopup('Palm Olympia Noida')"
+              <li class="nav-item"><a href="#About-clinic" class="nav-link">About Clinic</a></li>
+              <li class="nav-item"><a href="#treatment"
                   class="nav-link">Treatment</a></li>
-              <li class="nav-item"><a href="#Enquire-Now" onclick="showPopup('Palm Olympia Noida')"
-                  class="nav-link">Enquire-Now</a></li>
+              <li class="nav-item"><a href="javascript:;" onclick="showPopup('show')"
+                  class="nav-link">Enquire Now</a></li>
               <li class="nav-item">
                 <div class="ph-no"><i class="icon-phone-1"></i><a class="phone_url" href="tel:+919599715556"><span
                       class="phone_no">+91 95997 15556</span></a></div>
@@ -3748,18 +3598,6 @@
           <form class="form-content" method="post">
             <div class="form-group">
               <div class="name-cont">
-                <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
-                width: 100%;
-                font-size: 1em;
-                border-radius: 5px;">
-                  <option value="Hydra Facial" data-locationName="Noida">Select Your Treatments</option>
-                  <option value="Hydra Facial" data-locationName="Noida">Hydra Facial</option>
-                  <option value="Microneedling & DermaPen" data-locationName="Noida">Microneedling & DermaPen</option>
-                  <option value="Laser Hair Reduction" data-locationName="Noida">Laser Hair Reduction</option>
-                  <option value="Hair Transplant" data-locationName="Noida">Hair Transplant</option>
-                </select>
-              </div>
-              <div class="name-cont">
                 <input type="text" class="form-control" id="name" placeholder="Enter Your Name*" name="name"
                   onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)"
                   required>
@@ -3777,10 +3615,17 @@
                   size="32" minlength="3" maxlength="64">
               </div>
               <div class="name-cont">
-                <input type="hidden" class="form-control" id="city" value="Noida" placeholder="Enter Your City*"
-                  name="city" required>
+                <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
+                width: 100%;
+                font-size: 1em;
+                border-radius: 5px;">
+                  <option value="Hydra Facial" data-locationName="Noida">Select Your Treatments</option>
+                  <option value="Hydra Facial" data-locationName="Noida">Hydra Facial</option>
+                  <option value="Microneedling & DermaPen" data-locationName="Noida">Microneedling & DermaPen</option>
+                  <option value="Laser Hair Reduction" data-locationName="Noida">Laser Hair Reduction</option>
+                  <option value="Hair Transplant" data-locationName="Noida">Hair Transplant</option>
+                </select>
               </div>
-              <input type="hidden" name="" id="ip" value="49.249.44.18">
               <input type="button" value="Submit" name="submit" class="register-submit btn btn-primary" id="SubmitQuery"
                 onclick="contactusbutton()">
             </div>
@@ -3788,7 +3633,7 @@
         </div>
       </div>
     </div>
-    <section id="Noida">
+    <section id="treatment">
       <div class="price-section">
         <div class="container">
           <div class="main-title text-center">
@@ -3816,7 +3661,7 @@
                     </div>
                     <div class="bottom-specs">
                       <div style=" display: flex;">
-                        <a href="#Palm-Olympia-Noida" onclick="showPopup('Palm Olympia Noida', 'Noida')"
+                        <a href="javascript:;" onclick="showPopup('show')"
                           title="Enquire Now" value="Enquire Now" class="register-submit btn btn-primary"
                           style="width:220px; margin-right: 10px;">Book a Call</a>
                         <!--<a href="https://api.whatsapp.com/send?phone=+919990118866&amp;text=Hi!%20I%20am%20Interested%20In%20Palm%20Olympia%20PH-2,%20Sector-16%20C,%20Gr.%20Noida(W).%20Please%20Share%20Details."-->
@@ -3848,7 +3693,7 @@
                     </div>
                     <div class="bottom-specs">
                       <div style=" display: flex;">
-                        <a href="#Gaurs-Leisure-Park-Noida" onclick="showPopup('Gaurs Leisure Park Noida', 'Noida')"
+                        <a href="javascript:;" onclick="showPopup('show')"
                           title="Enquire Now" value="Enquire Now" class="register-submit btn btn-primary"
                           style="width:220px; margin-right: 10px;">Book a Call</a>
                         <!--<a href="https://api.whatsapp.com/send?phone=+919990118866&amp;text=Hi!%20I%20am%20Interested%20In%20Palm%20Olympia%20PH-2,%20Sector-16%20C,%20Gr.%20Noida(W).%20Please%20Share%20Details."-->
@@ -3880,7 +3725,7 @@
                     </div>
                     <div class="bottom-specs">
                       <div style=" display: flex;">
-                        <a href="#Eternia-Residences-Noida" onclick="showPopup('Eternia Residences Noida', 'Noida')"
+                        <a href="javascript:;" onclick="showPopup('show')"
                           title="Enquire Now" value="Enquire Now" class="register-submit btn btn-primary"
                           style="width:220px; margin-right: 10px;">Book a Call</a>
                         <!--<a href="https://api.whatsapp.com/send?phone=+919990118866&amp;text=Hi!%20I%20am%20Interested%20In%20Palm%20Olympia%20PH-2,%20Sector-16%20C,%20Gr.%20Noida(W).%20Please%20Share%20Details."-->
@@ -3913,7 +3758,7 @@
                     </div>
                     <div class="bottom-specs">
                       <div style=" display: flex;">
-                        <a href="#Ace-Hanei-Noida" onclick="showPopup('Ace Hanei Noida', 'Noida')"
+                        <a href="javascript:;" onclick="showPopup('show')"
                           title="Enquire Now" value="Enquire Now" class="register-submit btn btn-primary"
                           style="width:220px; margin-right: 10px;">Book a Call</a>
                         <!--<a href="https://api.whatsapp.com/send?phone=+919990118866&amp;text=Hi!%20I%20am%20Interested%20In%20Ace%20Hanei%20Noida.%20Please%20Share%20Details."-->
@@ -3945,7 +3790,7 @@
                     </div>
                     <div class="bottom-specs">
                       <div style=" display: flex;">
-                        <a href="#CRC-Maesta-Noida" onclick="showPopup('CRC Maesta Noida', 'Noida')"
+                        <a href="javascript:;" onclick="showPopup('show')"
                           title="Enquire Now" value="Enquire Now" class="register-submit btn btn-primary"
                           style="width:220px; margin-right: 10px;">Book a Call</a>
                         <!--<a href="https://api.whatsapp.com/send?phone=+919990118866&amp;text=Hi!%20I%20am%20Interested%20In%20CRC%20Maesta%20Noida.%20Please%20Share%20Details."-->
@@ -3965,7 +3810,7 @@
         </div>
       </div>
     </section>
-    <section class="About" id="About-project">
+    <section class="About" id="About-clinic">
       <div class="container">
         <div class="main-title text-center">
           <span>About</span>
@@ -4012,7 +3857,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Experience bespoke beauty and wellness</h4>
+          <h4 class="modal-title" style="text-align: center;">Appointment Request Form</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
@@ -4026,7 +3871,7 @@ text-align: center;">
               </ul>
             </div>
             <div class="flex-fill align-self-center" style="margin-left:10px;">
-              <h2 class="modal-title" style="text-align:center;font-size: 20px;"> Appointment Request Form</h2>
+              <!-- <h2 class="modal-title" style="text-align:center;font-size: 20px;"> Appointment Request Form</h2> -->
               <!-- <center><img src="./gallery/logo.png" class="modal-logo" style="width:50%;"></center> -->
               <span class="modal-title-secondary">12 people on the waitlist</span>
               <form class="form-content">
@@ -4046,13 +3891,21 @@ text-align: center;">
                       pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}" required
                       size="32" minlength="3" maxlength="64">
                   </div>
+                  
                   <div class="name-cont">
-                    <input type="hidden" value="Noida" class="form-control" id="city1" placeholder="Enter Your City*"
-                      name="city" required>
-                    <input type="hidden" class="form-control" id="project_name1" name="project_name"
-                      value="Palm Olympia Noida">
+
+                    <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
+                    width: 95%;
+                    font-size: 1em;
+                    border-radius: 5px;margin-bottom: 15px;">
+                      <option value="Hydra Facial" data-locationName="Noida">Select Your Treatments</option>
+                      <option value="Hydra Facial" data-locationName="Noida">Hydra Facial</option>
+                      <option value="Microneedling & DermaPen" data-locationName="Noida">Microneedling & DermaPen</option>
+                      <option value="Laser Hair Reduction" data-locationName="Noida">Laser Hair Reduction</option>
+                      <option value="Hair Transplant" data-locationName="Noida">Hair Transplant</option>
+                    </select>
+
                   </div>
-                  <input type="hidden" name="" id="ip" value="49.249.44.18">
                   <input type="button" value="Book a Call" name="submit" class="register-submit btn btn-primary"
                     id="SubmitQuery1" onclick="contactusbutton1()">
                   <!-- <button value="Enquire Now" class="register-submit btn btn-primary" id="mbutton" type="submit">Submit</button> -->
@@ -4105,10 +3958,7 @@ margin-top: 12px;"><img src="img/phone.webp"> +91 95997 15557</a>
       }, 3000);
     });
 
-    function showPopup(project, locationName) {
-      $('#project_name1').val(project);
-      $('#city1').val(locationName);
-      $('.modal-title').html(project);
+    function showPopup(show) {
       jQuery('.modal.form').modal('show');
     }
 
