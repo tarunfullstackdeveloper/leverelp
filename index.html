@@ -3595,41 +3595,44 @@
             <p style="text-align: left; margin-top: 10px;"><b style="font-size: 17px; color: #000;">
                 12 people on the waitlist</b></p>
           </div>
-          <form class="form-content" method="post">
-            <div class="form-group">
-              <div class="name-cont">
-                <input type="text" class="form-control" id="name" placeholder="Enter Your Name*" name="name"
-                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)"
-                  required>
-              </div>
-              <div class="flex-content">
-                <div class="m-number-cont">
-                  <input type="text" class="form-control" id="phone" placeholder="Mobile No*" name="phone"
-                    onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
-                    required>
+          
+              <form class="form-content"  action="send-form.php" method="post">
+                <div class="form-group">
+                  <div class="name-cont">
+                    <input type="text" id="name1" class="form-control" placeholder="Your Name*" name="name"
+                      onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)">
+                  </div>
+                  <div class="contry-code-mb-number">
+                    <div class="m-number-cont">
+                      <input id="phone1" class="form-control" placeholder="Mobile No*" name="phone1"
+                        onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+                    </div>
+                  </div>
+                  <div class="name-cont">
+                    <input type="email" class="form-control" id="email1" placeholder="Enter Your Email*" name="email"
+                      pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}" required
+                      size="32" minlength="3" maxlength="64">
+                  </div>
+                  
+                  <div class="name-cont">
+
+                    <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
+                    width: 100%;
+                    font-size: 1em;
+                    border-radius: 5px;">
+                      <option value="Hydra Facial" data-locationName="Noida">Select Your Treatments</option>
+                      <option value="Hydra Facial" data-locationName="Noida">Hydra Facial</option>
+                      <option value="Microneedling & DermaPen" data-locationName="Noida">Microneedling & DermaPen</option>
+                      <option value="Laser Hair Reduction" data-locationName="Noida">Laser Hair Reduction</option>
+                      <option value="Hair Transplant" data-locationName="Noida">Hair Transplant</option>
+                    </select>
+
+                  </div>
+                  <input type="button" value="Book a Call" name="submit" class="register-submit btn btn-primary"
+                    id="" onclick="submitForm1()">
+                  <!-- <button value="Enquire Now" class="register-submit btn btn-primary" id="mbutton" type="submit">Submit</button> -->
                 </div>
-              </div>
-              <div class="name-cont">
-                <input type="email" class="form-control" id="email" placeholder="Enter Your Email*" name="email"
-                  pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}" required
-                  size="32" minlength="3" maxlength="64">
-              </div>
-              <div class="name-cont">
-                <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
-                width: 100%;
-                font-size: 1em;
-                border-radius: 5px;">
-                  <option value="Hydra Facial" data-locationName="Noida">Select Your Treatments</option>
-                  <option value="Hydra Facial" data-locationName="Noida">Hydra Facial</option>
-                  <option value="Microneedling & DermaPen" data-locationName="Noida">Microneedling & DermaPen</option>
-                  <option value="Laser Hair Reduction" data-locationName="Noida">Laser Hair Reduction</option>
-                  <option value="Hair Transplant" data-locationName="Noida">Hair Transplant</option>
-                </select>
-              </div>
-              <input type="button" value="Submit" name="submit" class="register-submit btn btn-primary" id="SubmitQuery"
-                onclick="contactusbutton()">
-            </div>
-          </form>
+              </form>
         </div>
       </div>
     </div>
@@ -3743,7 +3746,7 @@
                  <li style="    box-shadow: 0px 0px 40px rgb(241 225 225); border-radius: 20px; background: #000;">
                 <div class="grid-box">
                   <figure class="reveal-effect wow">
-                    <img src="img/DT.jpg" alt="Ace Hanei Noida">
+                    <img src="img/dental.jpg" alt="Ace Hanei Noida">
                   
                   </figure>
                <!--<ul class="grid-sticker">-->
@@ -3874,43 +3877,7 @@ text-align: center;">
               <!-- <h2 class="modal-title" style="text-align:center;font-size: 20px;"> Appointment Request Form</h2> -->
               <!-- <center><img src="./gallery/logo.png" class="modal-logo" style="width:50%;"></center> -->
               <span class="modal-title-secondary">12 people on the waitlist</span>
-              <form class="form-content">
-                <div class="form-group">
-                  <div class="name-cont">
-                    <input type="text" id="name1" class="form-control" placeholder="Your Name*" name="name"
-                      onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)">
-                  </div>
-                  <div class="contry-code-mb-number">
-                    <div class="m-number-cont">
-                      <input id="phone1" class="form-control" placeholder="Mobile No*" name="phone1"
-                        onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
-                    </div>
-                  </div>
-                  <div class="name-cont">
-                    <input type="email" class="form-control" id="email1" placeholder="Enter Your Email*" name="email"
-                      pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}" required
-                      size="32" minlength="3" maxlength="64">
-                  </div>
-                  
-                  <div class="name-cont">
-
-                    <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
-                    width: 95%;
-                    font-size: 1em;
-                    border-radius: 5px;margin-bottom: 15px;">
-                      <option value="Hydra Facial" data-locationName="Noida">Select Your Treatments</option>
-                      <option value="Hydra Facial" data-locationName="Noida">Hydra Facial</option>
-                      <option value="Microneedling & DermaPen" data-locationName="Noida">Microneedling & DermaPen</option>
-                      <option value="Laser Hair Reduction" data-locationName="Noida">Laser Hair Reduction</option>
-                      <option value="Hair Transplant" data-locationName="Noida">Hair Transplant</option>
-                    </select>
-
-                  </div>
-                  <input type="button" value="Book a Call" name="submit" class="register-submit btn btn-primary"
-                    id="SubmitQuery1" onclick="contactusbutton1()">
-                  <!-- <button value="Enquire Now" class="register-submit btn btn-primary" id="mbutton" type="submit">Submit</button> -->
-                </div>
-              </form>
+             
             </div>
           </div>
           <a href="tel:+919599715557" style="text-align: center;
@@ -4012,7 +3979,42 @@ margin-top: 12px;"><img src="img/phone.webp"> +91 95997 15557</a>
         if (utm_source == '' || utm_source == null){
             utm_source = "XDAW";
         }
+
   </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+  function submitForm1() {
+    var name = document.getElementById('name1').value;
+    var phone = document.getElementById('phone1').value;
+    var email = document.getElementById('email1').value;
+    var project_name = document.getElementById('project_name').value;
+
+    if (name === '' || phone === '' || email === '' || project_name === '') {
+      alert("Please fill all required fields.");
+      return false;
+    }
+
+    $.ajax({
+      url: 'send-form.php',
+      type: 'POST',
+      data: {
+        name: name,
+        phone: phone,
+        email: email,
+        project_name: project_name
+      },
+      success: function (response) {
+        if (response.trim() === "success") {
+          window.location.href = "thanks.html";
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      }
+    });
+  }
+</script>
+
   <script type="application/javascript" src="https://api.ipify.org/?format=jsonp&amp;callback=getIP"> </script>
 </body>
 
