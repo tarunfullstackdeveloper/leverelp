@@ -3957,7 +3957,7 @@ margin-top: 12px;"><img src="img/phone.webp"> +91 95997 15557</a>
     </div>
   </div>
 
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type='text/javascript' src='new-js/bootstrap.js' id='realtygo_clean-bootstap_js-js'></script>
   <script type='text/javascript' src='new-js/jquery.fancybox.min.js' id='realtygo_clean_fancybox_js-js'></script>
   <script type='text/javascript' src='new-js/custom.js' id='realtygo_clean_script_js-js'></script>
@@ -3996,6 +3996,27 @@ margin-top: 12px;"><img src="img/phone.webp"> +91 95997 15557</a>
 
 
   </script>
+  <script>
+  $(document).ready(function () {
+    $('#contactForm').on('submit', function (e) {
+      e.preventDefault();
+
+      $.ajax({
+        url: 'send-form.php',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function (response) {
+          // Redirect to thank-you page
+          window.location.href = 'thanks.html';
+        },
+        error: function () {
+          alert('Something went wrong. Please try again.');
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 
 
