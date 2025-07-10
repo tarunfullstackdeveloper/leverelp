@@ -3481,8 +3481,44 @@
     }
     .banner-box .carousel-item {
         height: 90vh;
+    } 
+    .register-submit { 
+        background-color: #007bff; 
+        color: white; 
+        padding: 12px 30px; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-size: 1em;
+        width: 100%;
     }
-
+    .register-submit:hover { background-color: #0056b3; }
+    .register-submit:disabled { 
+        background-color: #ccc; 
+        cursor: not-allowed; 
+    }
+    .error { 
+        color: red; 
+        margin-bottom: 15px; 
+        padding: 10px;
+        background-color: #ffe6e6;
+        border-radius: 5px;
+    }
+    .success { 
+        color: green; 
+        margin-bottom: 15px; 
+        padding: 10px;
+        background-color: #e6ffe6;
+        border-radius: 5px;
+    }
+    .loading { opacity: 0.7; pointer-events: none; }
+    .form-error { border: 2px solid #ff4444; }
+    .form-success { border: 2px solid #44ff44; }
+    .error-message {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
     .banner-box .carousel-item img {object-fit: cover;}
   </style>
   <link rel='stylesheet' id='realtygo_clean-bootstrap-css-css' href='css/bootstrap.min.css' type='text/css'
@@ -3596,43 +3632,37 @@
                 12 people on the waitlist</b></p>
           </div>
           
-              <form class="form-content"  action="send-form.php" method="post">
-                <div class="form-group">
+              <form class="form-content" action="send-form.php" method="post" id="contactForm">
+              <div class="form-group">
                   <div class="name-cont">
-                    <input type="text" id="name1" class="form-control" placeholder="Your Name*" name="name"
-                      onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32)">
+                      <input type="text" id="name1" class="form-control" placeholder="Your Name*" name="name" required>
                   </div>
+                  
                   <div class="contry-code-mb-number">
-                    <div class="m-number-cont">
-                      <input id="phone1" class="form-control" placeholder="Mobile No*" name="phone1"
-                        onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
-                    </div>
-                  </div>
-                  <div class="name-cont">
-                    <input type="email" class="form-control" id="email1" placeholder="Enter Your Email*" name="email"
-                      pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}" required
-                      size="32" minlength="3" maxlength="64">
+                      <div class="m-number-cont">
+                          <input id="phone1" class="form-control" placeholder="Mobile No*" name="contact" required>
+                      </div>
                   </div>
                   
                   <div class="name-cont">
-
-                    <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
-                    width: 100%;
-                    font-size: 1em;
-                    border-radius: 5px;">
-                      <option value="Hydra Facial" data-locationName="Noida">Select Your Treatments</option>
-                      <option value="Hydra Facial" data-locationName="Noida">Hydra Facial</option>
-                      <option value="Microneedling & DermaPen" data-locationName="Noida">Microneedling & DermaPen</option>
-                      <option value="Laser Hair Reduction" data-locationName="Noida">Laser Hair Reduction</option>
-                      <option value="Hair Transplant" data-locationName="Noida">Hair Transplant</option>
-                    </select>
-
+                      <input type="email" class="form-control" id="email1" placeholder="Enter Your Email*" name="email" required>
                   </div>
-                  <input type="button" value="Book a Call" name="submit" class="register-submit btn btn-primary"
-                    id="" onclick="submitForm1()">
-                  <!-- <button value="Enquire Now" class="register-submit btn btn-primary" id="mbutton" type="submit">Submit</button> -->
-                </div>
-              </form>
+                  
+                  <div class="name-cont">
+                      <select class="form-control" id="project_name" name="treatment" required>
+                          <option value="">Select Your Treatment</option>
+                          <option value="Hydra Facial">Hydra Facial</option>
+                          <option value="Microneedling & DermaPen">Microneedling & DermaPen</option>
+                          <option value="Laser Hair Reduction">Laser Hair Reduction</option>
+                          <option value="Hair Transplant">Hair Transplant</option>
+                      </select>
+                  </div>
+                  
+                  <button type="submit" name="submit" class="register-submit btn btn-primary" id="submitBtn">
+                      Book a Call
+                  </button>
+              </div>
+          </form>
         </div>
       </div>
     </div>
@@ -3885,19 +3915,18 @@ text-align: center;">
                   </div>
                   <div class="contry-code-mb-number">
                     <div class="m-number-cont">
-                      <input id="phone1" class="form-control" placeholder="Mobile No*" name="phone1"
+                      <input id="phone1" class="form-control" placeholder="Mobile No*" name="contact"
                         onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                     </div>
                   </div>
                   <div class="name-cont">
-                    <input type="email" class="form-control" id="email1" placeholder="Enter Your Email*" name="email"
-                      pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}" required
+                    <input type="email" class="form-control" id="email1" placeholder="Enter Your Email*" name="email" required
                       size="32" minlength="3" maxlength="64">
                   </div>
                   
                   <div class="name-cont">
 
-                    <select class="form-group" id="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
+                    <select class="form-group" id="treatment" name="project_name" placeholder="Enter Your City" style="    height: calc(2.3em + 0.75rem + 0px);
                     width: 95%;
                     font-size: 1em;
                     border-radius: 5px;margin-bottom: 15px;">
@@ -3909,8 +3938,8 @@ text-align: center;">
                     </select>
 
                   </div>
-                  <input type="button" value="Book a Call" name="submit" class="register-submit btn btn-primary"
-                    id="" onclick="submitForm1()">
+                   <button type="submit" type="button" value="Book a Call" name="submit" class="register-submit btn btn-primary"
+                    id="" style="color: #fff !important">Book a Call</button>
                   <!-- <button value="Enquire Now" class="register-submit btn btn-primary" id="mbutton" type="submit">Submit</button> -->
                 </div>
               </form>
@@ -3967,91 +3996,6 @@ margin-top: 12px;"><img src="img/phone.webp"> +91 95997 15557</a>
 
 
   </script>
-
-  <script>
-    jQuery('.navbar-nav>li>a').on('click', function () {
-      jQuery('.navbar-collapse').collapse('hide');
-    });
-  </script>
-  <script>
-    function getIP(json) {
-
-      var ip = json.ip;
-      document.getElementById('ip').value = ip;
-
-    }
-
-    $(document).ready(function () {
-      $("#project_name").change(function () {
-
-        var selectedVal = $("#project_name option:selected").attr('data-locationName');
-        $('#city').val(selectedVal);
-
-      });
-    });
-
-
-    // var searchParams = new URLSearchParams(window.location.search);
-    // var utm_source = searchParams.get('source');
-    // var utm_term = searchParams.get('keyword');
-    // var utm_medium = searchParams.get('creative');
-    // var utm_campaignID = searchParams.get('campaignid');
-    // var gclid = searchParams.get('gclid');
-
-
-    // if (utm_source == '' || utm_source == null) {
-    //   utm_source = "XD";
-    // }
-    
-    
-   var searchParams = new URLSearchParams(window.location.search);
-        var utm_source = searchParams.get('source');
-        var utm_term = searchParams.get('keyword');
-        var utm_medium = searchParams.get('creative');
-        var utm_campaignID = searchParams.get('campaignid');
-        var gclid = searchParams.get('gclid');
-        
-        
-        if (utm_source == '' || utm_source == null){
-            utm_source = "XDAW";
-        }
-
-  </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <script>
-  function submitForm1() {
-    var name = document.getElementById('name1').value;
-    var phone = document.getElementById('phone1').value;
-    var email = document.getElementById('email1').value;
-    var project_name = document.getElementById('project_name').value;
-
-    if (name === '' || phone === '' || email === '' || project_name === '') {
-      alert("Please fill all required fields.");
-      return false;
-    }
-
-    $.ajax({
-      url: 'send-form.php',
-      type: 'POST',
-      data: {
-        name: name,
-        phone: phone,
-        email: email,
-        project_name: project_name
-      },
-      success: function (response) {
-        if (response.trim() === "success") {
-          window.location.href = "thanks.html";
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      }
-    });
-  }
-</script>
-
-  <script type="application/javascript" src="https://api.ipify.org/?format=jsonp&amp;callback=getIP"> </script>
 </body>
 
 
